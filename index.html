@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analista de Dados | Power BI, SQL, ETL & Data Quality | Vagner Santos</title>
+    <meta name="description" content="Portfólio de Vagner Santos. Soluções em Business Intelligence, ETL, Qualidade de Dados e Modelagem com Power BI, SQL e Python.">
+    <link rel="icon" type="image/png" href="./imagens/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --background: #0F172A;
+            --surface: #1E293B;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --accent: #22D3EE;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .hero-section {
+            background: linear-gradient(to right, #0F172A, #1E293B);
+            padding: 120px 0 80px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            overflow: visible;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            cursor: pointer;
+        }
+        .image-project {
+            width: 200px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .card-title  {
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+        }
+        .card-text {
+            color: #ffffff; 
+            font-weight: bold;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .skill-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .skill-badge:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .btn.skill-badge {
+             background: rgba(99, 102, 241, 0.1);
+             color: var(--accent);
+             border: 1px solid var(--accent);
+             border-radius: 20px;
+             padding: 8px 16px;
+             transition: all 0.3s ease;
+        }
+        .btn.skill-badge:hover {
+             background: var(--primary);
+             color: white;
+             transform: scale(1.1);
+        }
+        .timeline-item {
+            border-left: 2px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            position: absolute;
+            left: -7px;
+            top: 0;
+            border-radius: 50%;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--surface);
+            color: var(--text);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .progress {
+            height: 8px;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 4px;
+        }
+        .progress-bar {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+        }
+        .nav-link {
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        h1, h2, h3, h4, h5 {
+            color: var(--text);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        h1.display-4 {
+            line-height: 1.3;
+        }
+        .rounded-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .rounded-image {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand text-gradient fw-bold" href="#" id="navbarLogo">VS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+                <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Cursos Complementares">Certificações</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contatos</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script> 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js'></script>
+
+<script>
+    $(document).ready(function() {
+        // Fecha o menu ao clicar em qualquer link
+        $('.navbar-nav .nav-link').on('click', function() {
+            $('.navbar-collapse').collapse('hide');
+        });
+
+        // Fecha o menu ao clicar no logo
+        $('#navbarLogo').on('click', function() {
+            $('.navbar-collapse').collapse('hide');
+        });
+    });
+</script>
+    
+    <section class="hero-section">
+        <div class="container text-center">
+            <img src="./imagens/foto_principal.jpg" alt="Vagner Sousa" class="profile-image mb-4" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <h1 class="display-4 fw-bold mb-3 text-gradient">Vagner Sousa dos Santos</h1>
+            <h2 class="fs-4 fw-light mb-5">Analista de Dados | BI Estratégico & Resolvedor de Problemas</h2>
+        </div>
+    </section>
+    
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Vagner Sousa dos Santos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="./imagens/foto_principal.jpg" alt="Vagner Sousa" style="width:55%; height:auto;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="mb-4">Sobre Mim</h2>
+            <p>
+              Bem-vindos ao meu portfólio!
+              Sou um profissional em transição de carreira <b>consolidada</b>, com mais de <b>6 anos de experiência em TI e Qualidade de Software</b>, focado em transformar dados complexos em <b>insights acionáveis e otimização de processos</b>. Minha experiência me confere a <b>maturidade técnica e a visão de negócio de um Analista Pleno</b>.
+            </p>
+            
+            <p>
+              Minha dupla formação (TI Concluído/Ciência de Dados em andamento) me equipa com o rigor de que a área precisa. Minha experiência atual na TIM abrange o <b>ciclo completo de dados</b>:
+            </p>
+            
+            <ul class="list-unstyled" style="padding-left: 20px;">
+                <li><b>ETL e Qualidade:</b> Utilizo técnicas de <b>ETL/ELT</b> para <b>limpeza, validação e estruturação</b> de bases, garantindo a integridade dos dados (reforçado pela vivência em Sinqia).</li>
+                <li><b>Análise Estratégica:</b> Aplico <b>análises estatísticas e descritivas</b> para extrair <b>insights acionáveis</b> e informar decisões gerenciais.</li>
+                <li><b>Visualização:</b> Desenvolvo dashboards em <b>Power BI</b> com foco em <b>storytelling de dados</b> para facilitar a comunicação do impacto.</li>
+            </ul>
+            
+            <p>
+              Minhas ferramentas principais são <b>Power BI, SQL, Python, Excel Avançado</b> e <b>BigQuery</b>. Busco posições que permitam aplicar meu domínio para impulsionar a estratégia de negócio.
+              Navegue em meu portfólio para descobrir um pouco mais sobre minhas experiências e projetos!
+            </p>
+        </div>
+    </section>
+
+    <section id="experiencia" class="section">
+        <div class="container">
+            <h2 class="mb-4">Experiência</h2>
+            <div class="row">
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Estagiário de Análise de Dados </br>TIM S/A</h3>
+                    <p class="mb-2">Dezembro 2023 – Atual</p>
+                    <ul>
+                        <li>Implementação de rotinas de <b>ETL/ELT</b> e processamento de dados via Google <b>BigQuery</b> e ServiceNow para garantir a integridade e compliance dos relatórios de KPIs.</li></br>
+                        <li>Desenvolvimento de dashboards interativos em <b>Power BI</b> e análise exploratória de dados para acompanhar performance e compliance regulatório.</li></br>
+                        <li>Colaboração em reuniões de alinhamento, traduzindo resultados de <b>análises estatísticas</b> em soluções acionáveis para clientes internos.</li></br>
+                        <li>Apoio na <b>validação e estruturação de bases de dados</b>, garantindo o insumo para a tomada de decisão.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Analista de Qualidade de Software Pleno </br>Sinqia S/A</h3>
+                    <p class="mb-2">Setembro 2021 - Agosto 2022</p>
+                    <ul>
+                        <li>Atuação na <b>Governança e Qualidade dos Dados</b>, realizando validações de dados (<b>SQL/PLSQL</b>) e testes de performance (Apache Kafka) para garantir a consistência de sistemas.</li></br>
+                        <li><b>Levantamento de requisitos técnicos</b> e elaboração de documentação em ambiente ágil com JIRA e Scrum.</li></br>
+                        <li>Experiência com sistemas críticos (PIX) e contato direto com clientes para entendimento do negócio.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Analista de Sistemas </br>200DEV Consultoria de TI</h3>
+                    <p class="mb-2">Agosto 2022 - Dezembro 2022</p>
+                    <ul>
+                        <li>Criação de relatórios analíticos e <b>consultas SQL</b> para indicadores de performance.</li></br>
+                        <li>Participação em salas de crise (war rooms) e integração de dados entre diferentes plataformas.</li></br>
+                        <li>Sustentação de sistema bancário de empréstimo consignado.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 timeline-item">
+                    <h3 class="mb-3">Analista de Operações </br>Banco Daycoval S/A</h3>
+                    <p class="mb-2">Março 2019 - Agosto 2021</p>
+                    <ul>
+                        <li><b>Automatização de relatórios financeiros</b> com <b>SQL</b> e Excel para cálculo de comissões.</li></br>
+                        <li>Criação de dashboards de performance comercial e suporte a <b>decisões gerenciais</b>.</li></br>
+                        <li>Suporte a ferramentas do sistema bancário Função (acesso, bloqueio e manutenção).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <section id="habilidades" class="section">
+        <div class="container">
+            <h2 class="mb-4">Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-3">Linguagens e Banco de Dados</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge" data-skill-name="SQL (Consultas e ETL)" data-skill-level="75">SQL (Consultas e ETL)</span>
+                        <span class="skill-badge" data-skill-name="Python (Pandas, Análise)" data-skill-level="60">Python (Pandas, Análise)</span>
+                        <span class="skill-badge" data-skill-name="R (Análise Acadêmica)" data-skill-level="40">R (Análise Acadêmica)</span>
+                        <span class="skill-badge" data-skill-name="BigQuery" data-skill-level="70">Google BigQuery</span>
+                        <span class="skill-badge" data-skill-name="MYSQL / Oracle (PLSQL)" data-skill-level="60">MYSQL / Oracle (PLSQL)</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-3">BI e Ferramentas Corporativas</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge" data-skill-name="Power BI (DAX, Dashboards)" data-skill-level="80">Power BI (DAX, Dashboards)</span>
+                        <span class="skill-badge" data-skill-name="Excel (Avançado/Automação)" data-skill-level="90">Excel (Avançado/Automação)</span>
+                        <span class="skill-badge" data-skill-name="Azure (Cloud & Gov)" data-skill-level="70">Azure (Cloud & Governança)</span>
+                        <span class="skill-badge" data-skill-name="ServiceNow / JIRA" data-skill-level="80">ServiceNow / JIRA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Metodologias e Soft Skills</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge" data-skill-name="SCRUM" data-skill-level="100">SCRUM / Agilidade</span>
+                        <span class="skill-badge" data-skill-name="Lean Six Sigma" data-skill-level="80">Lean Six Sigma (Otimização)</span>
+                        <span class="skill-badge" data-skill-name="Data Quality" data-skill-level="90">Data Quality & Governança</span>
+                        <span class="skill-badge" data-skill-name="Storytelling" data-skill-level="85">Storytelling com Dados</span>
+                    </div>
+                </div>
+            </div>
+            <div id='progress-bars' style='margin-top:20px;'></div>
+        </div>
+    </section>
+
+    <section id='Cursos Complementares' class='section'>
+        <div class='container'>
+            <h2 class='mb-4'>Certificações & Formação Complementar</h2>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='skill-badges'>
+                        <span class='skill-badge' data-course-name='Certificação Scrum Foundation (SFPC)' data-course-level='100'>Certificação Scrum Foundation (SFPC)</span>
+                        <span class='skill-badge' data-course-name='Preparatório Microsoft Azure (DP-900)' data-course-level='80'>Preparatório Microsoft Azure (DP-900)</span>
+                        <span class='skill-badge' data-course-name='Lean Six Sigma - White Belt' data-course-level='70'>Lean Six Sigma</span>
+                        <span class='skill-badge' data-course-name='Análise de Dados com Python e SQL - Preditiva Analytics data-course-level='60'>Python/SQL para Análise (Preditiva Analytics)</span>
+                    </div> 
+                </div> 
+            </div>
+            <div id='course-progress-bars' style='margin-top:20px;'></div>
+        </div> 
+    </section>
+
+   <section id="projetos" class="section">
+    <div class="container">
+        <h2 class="mb-4">Projetos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 rounded-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Solução de Automação Operacional (ETL Simples)</h5>
+                        <img src="./imagens/projeto_1.jpg" alt="Automação ETL" class="image-project mb-1 rounded-image">
+                        <p class="card-text">Este projeto resolveu um gargalo operacional, eliminando a consolidação manual de planilhas. A solução de ETL simples (JavaScript/HTML/CSS) resultou na <b>redução de 90% do tempo de esforço manual</b> em uma rotina crítica, demonstrando foco em Solução de Problemas e Eficiência Operacional.</p>
+                        <a href="projeto_etl_automacao.html" class="btn skill-badge">Ver Análise Completa</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 rounded-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Análise Estratégica: Fatores Críticos de Retenção (Turnover)</h5>
+                        <img src="./imagens/projeto_2.png" alt="Turnover" class="image-project mb-1 rounded-image">
+                        <p class="card-text">Nesta análise de RH, utilizei técnicas de <b>Estatística Descritiva e Correlação</b> para identificar os <b>fatores críticos de retenção</b>. O foco foi converter o diagnóstico em <b>insights acionáveis</b> que pudessem orientar a gestão na minimização do Turnover.</p>
+                        <a href="#" class="btn skill-badge">Em Desenvolvimento...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 rounded-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Projeto 3: Modelagem Preditiva Básica (Python)</h5>
+                        <img src="./imagens/em_construcao_1.png" alt="Em Construção" class="image-project mb-1 rounded-image">
+                        <p class="card-text">Em Breve... (Foco em técnicas de Machine Learning e regressão básica para demonstrar capacidade de tradução de problemas em modelos).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <h2 class="mb-4">Contatos</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="https://api.whatsapp.com/send?phone=5511977868016" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://linkedin.com/in/vagnersousan" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Vagnersousan/" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="mailto:vagnersousan@hotmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        
+    <script> 
+        $(document).ready(function() { 
+            $('.skill-badge').on('click', function() { 
+                const skillName = $(this).data('skill-name') || $(this).data('course-name');
+                const skillLevel = $(this).data('skill-level') || $(this).data('course-level');
+
+                // Cria a barra de progresso
+                const progressBar = `
+                    <div style='margin-bottom:15px;'>
+                        <label>${skillName}</label> 
+                        <div style='height:20px;'class='progress'> 
+                            <div 
+                                class='progress-bar' 
+                                role='progressbar' 
+                                style='width:${skillLevel}%;' 
+                                aria-valuenow='${skillLevel}' 
+                                aria-valuemin='0' 
+                                aria-valuemax='100'> 
+                                ${skillLevel}% 
+                            </div> 
+                        </div> 
+                    </div>`;
+                
+                // Adiciona a barra de progresso na seção correspondente
+                if ($(this).data('course-name')) {
+                    $('#course-progress-bars').append(progressBar);
+                } else {
+                        $('#progress-bars').append(progressBar);
+                }
+
+                // Limpa a barra após um tempo (5 segundos)
+                setTimeout(() => {
+                    if ($(this).data('course-name')) {
+                        $('#course-progress-bars').find(`label:contains('${$(this).data('course-name')}')`).closest('div').remove();
+                    } else {
+                        $('#progress-bars').find(`label:contains('${$(this).data('skill-name')}')`).closest('div').remove();
+                    }
+                }, 5000); // Remove após 5 segundos
+            });
+        });
+    </script>
+
+</body>
+</html>
