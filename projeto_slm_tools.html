@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto: Portal SLM Tools | Vagner Santos</title>
+    <link rel="icon" type="image/png" href="./imagens/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --background: #0F172A;
+            --surface: #1E293B;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .header-content {
+            background-color: var(--surface);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .content-card {
+            background-color: var(--surface);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        h1, h2, h3 {
+            color: white;
+            font-weight: 600;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1.5rem; color: var(--primary); }
+        
+        .badge-tech {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .project-img {
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .project-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .result-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            height: 100%;
+        }
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+        
+        /* Estilo para código */
+        pre {
+            background-color: #0d1117;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            font-size: 0.9rem;
+        }
+        
+        .text-important { color: var(--text); }
+        a { text-decoration: none; }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-primary:hover { background-color: #4F46E5; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="mb-4">
+            <a href="index.html" class="text-decoration-none text-muted hover-white">
+                <i class="fas fa-arrow-left me-2"></i> Voltar ao Portfólio
+            </a>
+        </div>
+
+        <div class="header-content text-center">
+            <h1>Portal de Governança SLM Tools</h1>
+            <p class="lead text-muted mb-4">De planilhas descentralizadas para uma Aplicação Full Stack de Governança de Dados.</p>
+            
+            <div class="d-flex flex-wrap justify-content-center">
+                <span class="badge-tech"><i class="fab fa-python me-2"></i>Python (Flask)</span>
+                <span class="badge-tech"><i class="fab fa-js me-2"></i>JavaScript</span>
+                <span class="badge-tech"><i class="fas fa-chart-pie me-2"></i>Chart.js</span>
+                <span class="badge-tech"><i class="fas fa-database me-2"></i>Data Governance</span>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-exclamation-triangle me-2"></i>O Desafio de Negócio</h2>
+            <p>Na gestão de infraestrutura crítica da <b>TIM Brasil</b>, a atualização dos cadastros de servidores no Zabbix (Alarmística) enfrentava um gargalo de governança:</p>
+            <p>A coleta de dados dependia do envio descentralizado de <b>mais de 30 planilhas via e-mail</b> por diferentes gestores. Esse fluxo gerava:</p>
+            <ul class="text-muted">
+                <li>🔴 Dados duplicados e fora do padrão (erros de digitação).</li>
+                <li>🔴 Falta de rastreabilidade (quem atualizou o quê?).</li>
+                <li>🔴 Esforço manual de consolidação que consumia dias da equipe técnica.</li>
+            </ul>
+            <p class="mt-3">Como Analista, identifiquei que criar apenas um script de limpeza (ETL) não resolveria a causa raiz. Era necessário <b>mudar a forma como o dado nascia</b>.</p>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-lightbulb me-2"></i>A Solução: Portal SLM Tools</h2>
+            <p>Desenvolvi, com apoio de IA Generativa para aceleração de código, uma <b>Aplicação Web Full Stack</b> para centralizar a entrada de dados. O sistema substitui o fluxo de e-mails por um portal seguro com validação na entrada.</p>
+
+            <div class="row mt-4 g-4">
+                <div class="col-md-6">
+                    <img src="./imagens/image_ef1c80.png" class="img-fluid project-img shadow-lg" alt="Tela Inicial">
+                    <p class="text-center text-muted small mt-2">Tela de Login e Acesso Centralizado</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="./imagens/image_ef1fc4.jpg" class="img-fluid project-img shadow-lg" alt="Dashboard">
+                    <p class="text-center text-muted small mt-2">Dashboard de Status em Tempo Real</p>
+                </div>
+                <div class="col-md-12">
+                    <img src="./imagens/image_ef1939.png" class="img-fluid project-img shadow-lg" alt="Tela de Preenchimento">
+                    <p class="text-center text-muted small mt-2">Interface de Preenchimento com Validação Automática</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2><i class="fas fa-code me-2"></i>Engenharia por trás da Solução</h2>
+            <p>Atuei como <b>Arquiteto da Solução</b>, definindo regras de negócio e UX, utilizando IA (Manus) para codificar os componentes.</p>
+            
+            <h5 class="text-white mt-4 mb-3">Backend (Python/Flask)</h5>
+            <p class="text-muted">API REST para gerenciar requisições e disparar e-mails de auditoria.</p>
+            <pre>
+@app.route('/api/zabbix/update-master', methods=['POST'])
+def update_master_data():
+    try:
+        data = request.json
+        # Processamento e Validação dos dados
+        result = zabbix_service.update_master_data(data)
+        
+        # Notificação automática para auditoria
+        if result['success']:
+            email_service.send_upload_notification(data.get('user_info'), result)
+            
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500</pre>
+
+            <h5 class="text-white mt-4 mb-3">Frontend (JavaScript)</h5>
+            <p class="text-muted">Validação de matrícula e input no lado do cliente antes do envio.</p>
+            <pre>
+function validateAndProceed() {
+    const matricula = document.getElementById('user-matricula').value.trim();
+    // Regex para validar padrão corporativo (F ou T + 7 dígitos)
+    const matriculaRegex = /^[FT][0-9]{7}$/;
+    
+    if (!matriculaRegex.test(matricula)) {
+        showModal('Erro', 'Matrícula inválida. Use o padrão corporativo.');
+        return;
+    }
+    loadDirectFillForm();
+}</pre>
+        </div>
+
+        <div class="content-card">
+            <h2 class="text-center mb-5">Resultados Alcançados</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="result-box">
+                        <i class="fas fa-check-circle text-success fs-1 mb-3"></i>
+                        <span class="result-number">100%</span>
+                        <p class="text-muted">Rastreabilidade</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="result-box">
+                        <i class="fas fa-envelope-open-text text-warning fs-1 mb-3"></i>
+                        <span class="result-number">Zero</span>
+                        <p class="text-muted">Planilhas por E-mail</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="result-box">
+                        <i class="fas fa-stopwatch text-info fs-1 mb-3"></i>
+                        <span class="result-number">-90%</span>
+                        <p class="text-muted">Tempo de Consolidação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 mb-5">
+            <a href="index.html" class="btn btn-lg btn-primary shadow-lg">
+                <i class="fas fa-home me-2"></i> Voltar ao Início
+            </a>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
