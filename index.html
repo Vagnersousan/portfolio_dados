@@ -44,9 +44,8 @@
             cursor: pointer;
         }
         .image-project {
-            width: 200px;
-            height: auto;
-            aspect-ratio: 1 / 1;
+            width: 100%; /* Ajustado para preencher a largura do card mantendo proporção */
+            height: 200px; /* Altura fixa para padronizar os cards */
             object-fit: cover;
             display: block;
             margin-left: auto;
@@ -59,10 +58,16 @@
             color: #ffffff;
             font-weight: bold;
             text-align: center;
+            min-height: 50px; /* Alinhamento dos títulos */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .card-text {
-            color: #ffffff; 
-            font-weight: bold;
+            color: var(--text-muted); 
+            font-size: 0.95rem;
+            margin-top: 15px;
+            margin-bottom: 20px;
         }
         .card {
             background: var(--surface);
@@ -96,11 +101,14 @@
              border-radius: 20px;
              padding: 8px 16px;
              transition: all 0.3s ease;
+             width: 100%;
+             text-align: center;
+             display: block;
         }
         .btn.skill-badge:hover {
              background: var(--primary);
              color: white;
-             transform: scale(1.1);
+             transform: translateY(-2px);
         }
         .timeline-item {
             border-left: 2px solid var(--primary);
@@ -172,7 +180,8 @@
         .rounded-image {
             border-radius: 10px;
             width: 100%;
-            height: auto;
+            height: 200px; /* Garante altura uniforme */
+            object-fit: cover;
         }
     </style>
 </head>
@@ -356,7 +365,7 @@
                         <span class='skill-badge' data-course-name='Certificação Scrum Foundation (SFPC)' data-course-level='100'>Certificação Scrum Foundation (SFPC)</span>
                         <span class='skill-badge' data-course-name='Preparatório Microsoft Azure (DP-900)' data-course-level='80'>Preparatório Microsoft Azure (DP-900)</span>
                         <span class='skill-badge' data-course-name='Lean Six Sigma - White Belt' data-course-level='70'>Lean Six Sigma</span>
-                        <span class='skill-badge' data-course-name='Análise de Dados com Python e SQL - Preditiva Analytics data-course-level='60'>Python/SQL para Análise (Preditiva Analytics)</span>
+                        <span class='skill-badge' data-course-name='Análise de Dados com Python e SQL - Preditiva Analytics' data-course-level='60'>Python/SQL para Análise (Preditiva Analytics)</span>
                     </div> 
                 </div> 
             </div>
@@ -373,27 +382,30 @@
                     <div class="card-body">
                         <h5 class="card-title">Solução de Automação Operacional (ETL Simples)</h5>
                         <img src="./imagens/projeto_1.jpg" alt="Automação ETL" class="image-project mb-1 rounded-image">
-                        <p class="card-text">Este projeto resolveu um gargalo operacional, eliminando a consolidação manual de planilhas. A solução de ETL simples (JavaScript/HTML/CSS) resultou na <b>redução de 90% do tempo de esforço manual</b> em uma rotina crítica, demonstrando foco em Solução de Problemas e Eficiência Operacional.</p>
-                        <a href="projeto_etl_automacao.html" class="btn skill-badge">Ver Análise Completa</a>
+                        <p class="card-text">Automação com HTML/JS para eliminar consolidação manual de 30 planilhas. A solução reduziu em 90% o esforço operacional, garantindo integridade e eficiência no reporting de compliance.</p>
+                        <a href="projeto_etl_automacao.html" class="btn skill-badge">Ver Projeto Completo</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100 rounded-card">
                     <div class="card-body">
-                        <h5 class="card-title">Análise Estratégica: Fatores Críticos de Retenção (Turnover)</h5>
+                        <h5 class="card-title">Portal de Governança SLM Tools</h5>
+                        <img src="./imagens/image_ef1fc4.jpg" alt="Portal SLM Tools" class="image-project mb-1 rounded-image">
+                        <p class="card-text">Aplicação Web Full Stack (Python/Flask) desenvolvida para centralizar a entrada de dados. O portal substituiu o fluxo de e-mails, garantindo 100% de rastreabilidade e validação automática.</p>
+                        <a href="projeto_slm_tools.html" class="btn skill-badge">Ver Projeto Completo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 rounded-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Análise Estratégica: Retenção (Turnover)</h5>
                         <img src="./imagens/projeto_2.png" alt="Turnover" class="image-project mb-1 rounded-image">
-                        <p class="card-text">Nesta análise de RH, utilizei técnicas de <b>Estatística Descritiva e Correlação</b> para identificar os <b>fatores críticos de retenção</b>. O foco foi converter o diagnóstico em <b>insights acionáveis</b> que pudessem orientar a gestão na minimização do Turnover.</p>
+                        <p class="card-text">Utilização de Estatística Descritiva e Correlação para identificar fatores críticos de retenção. Foco em transformar dados de RH em insights para minimizar o turnover.</p>
                         <a href="#" class="btn skill-badge">Em Desenvolvimento...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 rounded-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Projeto 3: Modelagem Preditiva Básica (Python)</h5>
-                        <img src="./imagens/em_construcao_2.jpg" alt="Em Construção" class="image-project mb-1 rounded-image">
-                        <p class="card-text">Em Breve... (Foco em técnicas de Machine Learning e regressão básica para demonstrar capacidade de tradução de problemas em modelos).</p>
                     </div>
                 </div>
             </div>
